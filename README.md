@@ -46,7 +46,7 @@ podman run --name="stunnel" -d --rm \
     -e="SERVICE_HOST=portquiz.net" \
     -e="SERVICE_PORT=8080" \
     -p="8081:8081" \
-    samuvl/stunnel-container:1.0.1
+    samuvl/stunnel-container:1.1.1
 ```
 
 Check if the tunnel is exposing the TLS certificate correctly.

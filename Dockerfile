@@ -20,8 +20,9 @@ COPY --chown=stunnel:root \
 # Create certificates folder
 RUN install -d -o stunnel -g root ${STUNNEL_CERTS_DIR}
 
-# Allow root group to write in stunnel directories
-RUN chmod 775 ${STUNNEL_CONF_DIR} ${STUNNEL_CERTS_DIR}
+# Allow group to write in stunnel directories and files
+RUN chmod 775 ${STUNNEL_CONF_DIR} ${STUNNEL_CERTS_DIR} &&\
+    chmod 664 ${STUNNEL_CONF_DIR}/stunnel.conf.tpl
 
 # Copy entrypoint
 COPY entrypoint.sh .
