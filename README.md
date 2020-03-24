@@ -22,15 +22,15 @@ The certificate and private key can be loaded from different sources.
 - CRT + Key certificate.
 - Self-signed certicate.
 
-### PEM certificate
+### PEM
 
 The certificate is loaded from `/etc/stunnel/certificates/service.pem` file, it includes the certificate and private key in Base64 format.
 
-### CRT + Key certificate
+### CRT + Key
 
-The public and private certificate parts are separated in `/etc/stunnel/certificates/service.crt` and `/etc/stunnel/certificates/service.key` files. The `entrypoint.sh` script will merge these two files in a single one with PEM format.
+The public and private certificate parts are separated in `service.crt` and `service.key` files. The `entrypoint.sh` script will merge these two files in a single one with PEM format.
 
-### Self-signed certificate
+### Self-signed
 
 If no certificate is set, the `entrypoint.sh` script will create a self-signed certificate using the `SERVICE_HOST` as CN.
 
