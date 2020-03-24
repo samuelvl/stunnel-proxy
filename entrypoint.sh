@@ -33,6 +33,7 @@ export LISTENING_PORT=${LISTENING_PORT}
 export SERVICE_NAME=${SERVICE_NAME}
 export SERVICE_HOST=${SERVICE_HOST:-localhost}
 export SERVICE_PORT=${SERVICE_PORT}
+export SERVICE_PROTOCOL=${SERVICE_PROTOCOL:-none}
 export SERVICE_CERTIFICATE=${SERVICE_CERTIFICATE:-/etc/stunnel/certificates/service.pem}
 
 # Generate PEM certificate
@@ -47,6 +48,11 @@ if [ ! -f ${SERVICE_CERTIFICATE} ]; then
     else
         generate_certificate ${SERVICE_HOST} ${SERVICE_CERTIFICATE}
     fi
+fi
+
+# Set protocol if defined
+if [ "${SERVICE_PROTOCOL}" != "none" ]; then
+    echo "protocol = ${SERVICE_PROTOCOL}" >> ${STUNNEL_CONF_DIR}/stunnel.conf.tpl
 fi
 
 # Render stunnel configuration

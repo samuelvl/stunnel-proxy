@@ -12,6 +12,7 @@ Using the following environment variables.
 |    SERVICE_NAME     |       Name of the external service        |                   -                   |     http     |
 |    SERVICE_HOST     |  Hostname or IP of the external service   |               localhost               | portquiz.net |
 |    SERVICE_PORT     |      TCP por to forward the traffic       |                   -                   |     8080     |
+|  SERVICE_PROTOCOL   |     Service protocol to negotiate TLS     |                 none                  |      -       |
 | SERVICE_CERTIFICATE | Certificate for the service in PEM format | /etc/stunnel/certificates/service.pem |      -       |
 
 ## TLS certificate
@@ -45,7 +46,7 @@ podman run --name="stunnel" -d --rm \
     -e="SERVICE_HOST=portquiz.net" \
     -e="SERVICE_PORT=8080" \
     -p="8081:8081" \
-    samuvl/stunnel-container:1.0.0
+    samuvl/stunnel-container:1.0.1
 ```
 
 Check if the tunnel is exposing the TLS certificate correctly.
