@@ -6,13 +6,13 @@ Run a container to create a TLS encryption tunnel using `stunnel` for those serv
 
 Using the following environment variables.
 
-|        Name         |                Description                |  Default  |                Example                |
-| :-----------------: | :---------------------------------------: | :-------: | :-----------------------------------: |
-|   LISTENING_PORT    |    TPC port where stunnel is listening    |     -     |                 8081                  |
-|    SERVICE_NAME     |       Name of the external service        |     -     |                 http                  |
-|    SERVICE_HOST     |  Hostname or IP of the external service   | localhost |             portquiz.net              |
-|    SERVICE_PORT     |      TCP por to forward the traffic       |     -     |                 8080                  |
-| SERVICE_CERTIFICATE | Certificate for the service in PEM format |     -     | /etc/stunnel/certificates/service.pem |
+|        Name         |                Description                |                Default                |   Example    |
+| :-----------------: | :---------------------------------------: | :-----------------------------------: | :----------: |
+|   LISTENING_PORT    |    TPC port where stunnel is listening    |                   -                   |     8081     |
+|    SERVICE_NAME     |       Name of the external service        |                   -                   |     http     |
+|    SERVICE_HOST     |  Hostname or IP of the external service   |               localhost               | portquiz.net |
+|    SERVICE_PORT     |      TCP por to forward the traffic       |                   -                   |     8080     |
+| SERVICE_CERTIFICATE | Certificate for the service in PEM format | /etc/stunnel/certificates/service.pem |      -       |
 
 ## TLS certificate
 
